@@ -17,9 +17,9 @@ export OMP_NUM_THREADS=1
 
 ## basic setup for the env
 export CLUSTER_NAME=""
-export HOME_PREFIX="TODO"
-export PROJECT_PREFIX="TODO"
-export SCRATCH_PREFIX="TODO"
+export HOME_PREFIX="multi-agent-debate"
+export PROJECT_PREFIX="multi-agent-debate"
+export SCRATCH_PREFIX="multi-agent-debate"
 mkdir -p "${HOME_PREFIX}" "${PROJECT_PREFIX}" "${SCRATCH_PREFIX}"
 
 export PROJECT_NAME="rl-reasoning"
@@ -38,20 +38,20 @@ export OUTPUT_DIR="${PROJECT_DIR}/outputs"
 export LOGGING_DIR="${PROJECT_DIR}/logs"
 mkdir -p "${CKPT_DIR}" "${DATA_DIR}" "${OUTPUT_DIR}" "${LOGGING_DIR}"
 
-export WANDB_API_KEY="TODO"
-export WANDB_PROJECT="${TOPIC_NAME}"
-export WANDB_DIR="${OUTPUT_DIR}"
+# export WANDB_API_KEY="TODO"
+# export WANDB_PROJECT="${TOPIC_NAME}"
+# export WANDB_DIR="${OUTPUT_DIR}"
 
-wandb login $WANDB_API_KEY
+# wandb login $WANDB_API_KEY
 
 export CACHE_DIR="${PROJECT_DIR}/.cache"
 export WANDB_CACHE_DIR="${CACHE_DIR}"
 export TRITON_CACHE_DIR="${CACHE_DIR}/triton_cache"
 
-export HF_TOKEN="TODO"
-git config --global credential.helper store
-huggingface-cli login --token $HF_TOKEN --add-to-git-credential
+# export HF_TOKEN="TODO"
+# git config --global credential.helper store
+# huggingface-cli login --token $HF_TOKEN --add-to-git-credential
 
 export HF_HOME="${CACHE_DIR}/huggingface"
-export HUGGINGFACE_HUB_CACHE="${HF_HOME}/hub"
+export HUGGINGFACE_HUB_CACHE="${HF_HUB_CACHE}"
 export HF_DATASETS_CACHE="${HF_HOME}/datasets"

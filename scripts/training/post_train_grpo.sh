@@ -1,14 +1,12 @@
 #!/bin/bash
 
 
-MAMBA_ENV="tina"
-eval "$(mamba shell hook --shell bash)" && mamba activate "${MAMBA_ENV}"
 echo "START TIME: $(date)"
 echo "PYTHON ENV: $(which python)"
 
 source "./scripts/set/set_vars.sh"
 
-export CUDA_VISIBLE_DEVICES=0,1 # Set the GPUs you want to use
+# export CUDA_VISIBLE_DEVICES=0 # Set the GPUs you want to use
 GPU_COUNT=$(python -c "import torch; print(torch.cuda.device_count())")
 
 echo ""
@@ -18,10 +16,10 @@ echo ""
 MODEL_NAME="DeepSeek-R1-Distill-Qwen-1.5B"
 
 ## Main datasets
-DATASET_NAME="curated_deepscaler"
+# DATASET_NAME="curated_deepscaler"
 #DATASET_NAME="curated_still"
-#DATASET_NAME="curated_open_rs3"
-#DATASET_NAME="curated_open_rs2"
+# DATASET_NAME="curated_open_rs3"
+DATASET_NAME="curated_open_rs2"
 #DATASET_NAME="curated_open_rs1"
 
 ## Extra datasets
